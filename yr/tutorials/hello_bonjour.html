@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>yrtoolkit</title>
+  <link rel="stylesheet" href="../css/scrollstyle.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../scripts/utils.js"></script>
+  <script>
+    $(window).bind('resize', function() {
+      console.log("window resized")
+    });
+  </script>
+  
+  <script>
+    $( function() {
+      $( ".accordion" ).accordion({heightStyle: "content"});
+      $( ".widget input[type=submit], .widget a, .widget button" ).button();
+    } );
+  </script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-31803258-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+<body>
+
+  <div style="width:100%;height: 50px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
+    <div id="youthMobilePowerTab" style="float:left;height:40px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">Youth Mobile Power</div>
+    <div id="howToTab" style="float:left;height:40px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;">How To</div>
+  </div>
+
+  <div id="youthRadioAccordion" class="accordion">
+    <h3>The Challenge</h3>
+    <div>
+      <p>
+
+        This is <a href="https://youthradio.org/journalism/education/what-its-like-to-be-a-translator/" target="_blank">Youth Radio's story</a> from Amanda Agustin, who--like so many first-generation kids--has served as her mom's translator since she was little, which isn't always easy. “Yes, I’m bilingual,” she says, “and I can stamp that on my resume. And yes, it’s also a struggle to be the voice in the family at such a young age.”
+        <br/><br/>
+        You're challenged with creating an app that could act as an aid for families who need a little extra help in English-speaking situations. We can't wait to see what you come up with! 
+        <br/><br/>
+        Click connect your app to start building your app!
+      </p>
+    </div>
+
+    <h3>Connect your App</h3>
+    <div class="setup" id="connect_app"></div>
+
+    <h3>Hello Bonjour Translator</h3>
+    <div class="tutorialContainer">
+      <div class="tutorialNavigationHeader"></div>
+
+      <div class="tutorialContentPage">
+        <h3>1. Introduction</h3>
+        <p>You've started with a screen with a few components already added.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/intro.gif" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">  
+        <h3>2. Go to Blocks page</h3>
+        <p>Click on the Blocks button on the top right of the screen.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/clickBlocks.png" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage"> 
+        <h3>3. Add click handler</h3>
+        <p>Click on <span class='icon' alt='button'></span> translateButton and add <span class="control">when translateButton.Click</span>.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/clickButton.gif" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">  
+        <h3>4. Request translation</h3>
+        <p>Click on <span class='icon' alt='button'></span> translateButton and add <span class="procedures">call YandexTranslate1.RequestTranslation</span> to your <span class="control">when translateButton.Click</span> block.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/addRequestTranslation.gif" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">  
+        <h3>5. Add empty string</h3>
+        <p>Click on <span class='icon' alt='text'></span> Text and add the <span class="text">" "</span> block to the "languageToTranslateTo" socket of your <span class="procedures">call YandexTranslate1.RequestTranslation</span> block.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/addEmptyString.gif" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">  
+        <h3>6. Add language codes</h3>
+        <p>Click on your <span class="text">" "</span> block and enter the text, "ru-en".</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/enterLanguageCodes.gif" alt="some_text">
+        <p>This is how the codes work.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/translationExplanation.png" alt="some_text">
+        <!--         <p>And <a href="https://tech.yandex.com/translate/doc/dg/concepts/api-overview-docpage/" target="_blank">this</a> is the list of all supported language codes.</p> -->
+        <!-- Link to all language codes/how-to -->
+      </div>
+      
+      <div class="tutorialContentPage">  
+        <h3>7. Get text to be translated</h3>
+        <p>Click on the <span class='icon' alt='label'></span> russianText label and connect <span class="getters">russianText.Text</span> to the "textToTranslate" socket of the <span class="procedures">call YandexTranslate1.RequestTranslation</span> block.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/getRussianText.gif"  alt="some_text"> 
+      </div>
+
+      <div class="tutorialContentPage">  
+        <h3>8. Get the translated text</h3>
+        <p>Click on <span class='icon' alt='yandex'></span> YandexTranslate1 again and drag out the <span class="control">when YandexTranslate1.GotTranslation</span> block.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/addGetTranslation.gif"  alt="some_text"> 
+      </div>
+
+      <div class="tutorialContentPage">  
+        <h3>9. Reset the label</h3>
+        <p>Click on the <span class='icon' alt='label'></span> englishText label and drag out the <span class="setters">set englishText.Text to</span>  block and connect it to <span class="control">when YandexTranslate1.GotTranslation</span>.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/addEnglishText.gif"  alt="some_text"> 
+      </div>
+
+      <div class="tutorialContentPage">  
+        <h3>10. Get the translated text</h3>
+        <p>Hover over the red translation button and grab and click on <span class="variables">get translation</span>. Connect this block to <span class="setters">set englishText.Text to</span>.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/getTranslation.gif"  alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">  
+        <h3>11. Try and expand your app!</h3>
+        <p>Try out your app on your companion device! When you press the "Translate" button, does the translated text appear?</p>
+        <p>Next, go to the "Expand your app" section below and add more features to your app!</p>
+      </div>
+      <br/>
+      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+      </div>
+    </div>
+
+    <h3>Expand your app</h3>
+    <div>
+      <!-- Include a how-to for the USB and emulator connections -->
+      <b>Use language codes to translate to other languages.</b>
+      <p>
+        Learn how the <a href="#" onclick="return goToHowToTutorial(0)" title="Language Codes Tutorial">language codes</a> work in order to translate to languages other than English.
+      </p>
+      <b>Add a text box to enter your own text.</b>
+      <p>
+        Add a <a href="#" onclick="return goToHowToTutorial(1)" title="Comparison Tutorial">text box</a> to translate from a language other than English.
+      </p>
+      <b>Shake to translate text.</b>
+      <p>
+        Use the <a href="#" onclick="return goToHowToTutorial(2)" title="Accelerometer Tutorial">Accelerometer Component</a> sense when the device is being shaken in order to translate the text.</p> 
+      </p> 
+      <b>Make your text speak in English!</b>
+      <p>
+        Make your app a bit more vocal with the <a href="#" onclick="return goToHowToTutorial(3)" title="TextToSpeech English Tutorial">TextToSpeech component</a>. Try using this with the Yandex Translator and with text entered in a TextBox.
+      </p>
+      <b>Make your text speak in other languages!</b>
+      <p>
+        Use the <a href="#" onclick="return goToHowToTutorial(4)" title="TextToSpeech Other Languages Tutorial">TextToSpeech component</a> to make your app speak in German, Spanish, French, or Italian.
+      </p>
+    </div>
+
+  <h3>Share your App</h3>
+  <div class="setup" id="share_app"></div>
+
+  <h3>Published apps</h3>
+  <div>
+    <div id="container">
+     <div class="projectbox"> 
+      <img src="https://farm3.staticflickr.com/2510/32777057931_d96656a03d_m.jpg" alt="some_text" class="projectimage" />
+      <div class="projecttext"><span> Hello World</span> </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="howToAccordion" class="accordion" style="display:none">
+  <h3>Translate to another language</h3>
+  <div class="setup" id="translate_text"></div>
+
+<h3>Add a TextBox</h3>
+<div class="setup" id="textbox"></div>
+
+<h3>Shake to clear screen</h3>
+<div class="setup" id="translate_accelerometer"></div>
+
+<h3>Use the TextToSpeech component (English)</h3>
+<div class="setup" id="text_speech_english"></div>
+
+<h3>Use the TextToSpeech component (German, Spanish, French, or Italian)</h3>
+<div class="setup" id="text_speech_other"></div>
+
+</div>
+<div id="serverTutorialId" style="display:none;">5</div>
+</body>
+<script src="../scripts/tabHandler.js"></script>
+<script src="../scripts/tutorialPage.js"></script>
+<script src="../scripts/shareAndPublish.js"></script>
+
+</html>

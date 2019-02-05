@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>malden</title>
+  <link rel="stylesheet" href="../css/scrollstyle.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../scripts/utils.js"></script>
+  <script>
+      $(window).bind('resize', function() {
+          console.log("window resized")
+      });
+  </script>
+
+  <script>
+      $( function() {
+          $( ".accordion" ).accordion({heightStyle: "content",activate: function( event, ui ) {
+                  sendAnalyticsEvent( {
+                      hitType: 'event',
+                      eventCategory: 'Guide-' + document.getElementById("serverTutorialId").innerHTML,
+                      eventAction: 'headerClick',
+                      eventLabel: ui.newHeader.text()
+                  });
+
+              }});
+
+          $( ".widget input[type=submit], .widget a, .widget button" ).button();
+          //$( "button, input, a" ).click( );
+      } );
+  </script>
+
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-31803258-2', 'auto');
+      ga('send', 'pageview');
+
+  </script>
+</head>
+<body>
+
+<div style="width:100%;background-color:#8fc202;color:white;text-align:center;margin-bottom:5px;">
+  <span style="font-size:14pt;font-weight:bold">Mobile App Guide</span>
+</div>
+
+<div style="width:100%;height: 40px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
+  <div id="youthMobilePowerTab" style="float:left;height:30px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">App Guide</div>
+  <div id="howToTab" style="float:left;height:30px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;">How To</div>
+</div>
+
+
+  <div id="youthRadioAccordion" class="accordion">
+
+  <h3>Connect your App</h3>
+  <div class="setup" id="connect_app"></div>
+
+    <h3>Hello Woof Purr Tutorial</h3>
+    <div class="tutorialContainer">
+      <div class="tutorialNavigationHeader"></div>
+      <div class="tutorialContentPage">
+        <h4>1. Introduction</h4>
+        <p>Let's make an app that can play a dog or cat sound when an image is pressed.</p>
+        <p>If you haven't set up your device-app connection yet, click <a href="http://appinventor.mit.edu/explore/ai2/setup.html" target="_blank">here</a>.</p>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>2. Add and rename Label</h4>
+        <p>Drag a button on the screen. Rename it to "LabelQuestion".</p>
+        <img class="enlargeImage" src="../images/woof_purr/addLabel.gif" alt="some_text">
+      </div>
+
+    <div class="tutorialContentPage">
+      <h4>3. Update LabelQuestion</h4>
+      <p>In the Properties panel, find FontBold and select the box. Set the FontSize to "40" and the Text to "Cats or Dogs?"</p>
+        <img class="enlargeImage" src="../images/woof_purr/updateLabel.gif" alt="some_text">
+    </div>
+
+      <div class="tutorialContentPage">
+        <h4>4. Add two HorizontalArrangements</h4>
+        <p>Click on Layout in the Components panel and click and drag two HorizontalArrangements below your Label.</p>
+        <img class="enlargeImage" src="../images/woof_purr/addHorizArr.gif" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>5. Add two Buttons</h4>
+        <p>Click on User Interface and click and drag two Buttons into your top HorizontalArrangement (HorizontalArrangement1). Rename one "ButtonCat" and the other "ButtonDog".</p>
+        <img class="enlargeImage" src="../images/woof_purr/addButtons.gif" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>6. Update ButtonCat</h4>
+        <p>Select ButtonCat, and go to the Properties panel. Click Image and select "cat.jpg". Then, erase the words under Text.</p>
+        <img class="enlargeImage" src="../images/woof_purr/updateButtonCat.gif" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>7. Update ButtonDog</h4>
+        <p>Select ButtonDog, and go to the Properties panel. Click Image and select "dog.jpg". Then, erase the words under Text.</p>
+        <img class="enlargeImage" src="../images/woof_purr/updateButtonDog.gif" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>8. Set width of HorizontalArrangement2</h4>
+        <p>Click on HorizontalArrangement2 and in the Properties panel, set its Width to Fill parent.</p>
+        <img class="enlargeImage" src="../images/woof_purr/horizWidth.gif" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">
+       <h4>9. Add four Labels</h4>
+       <p>In User Interface, add four Labels to the bottom HorizontalArrangement (HorizontalArrangement2). Rename them to "LabelCat", "LabelCatVotes", "LabelDog", and "LabelDogVotes".</p>
+       <img class="enlargeImage" src="../images/woof_purr/fourLabels.gif">
+     </div>
+
+     <div class="tutorialContentPage">
+       <h4>10. Set LabelCat</h4>
+       <p>Click LabelCat and go to the Properties panel. Set the Width to "Fill parent" and the Text to "Cat Votes".</p>
+       <img class="enlargeImage" src="../images/woof_purr/setLabelCat.gif">
+     </div>
+
+     <div class="tutorialContentPage">
+       <h4>11. Set LabelCatVotes, LabelDog, and LabelDogVotes</h4>
+       <p>Click LabelCatVotes and set the Width to "Fill parent" and the Text to "0". Click LabelDog and set the Width to "Fill parent" and the Text to "Dog Votes". Click LabelCatVotes and set the Width to "Fill parent" and the Text to "0".</p>
+       <img class="enlargeImage" src="../images/woof_purr/setOtherLabels.gif">
+     </div>
+
+     <div class="tutorialContentPage">
+       <h4>12. Add two Players</h4>
+       <p>Click Media and drag two Player components to your Viewer. They will show up under "Non-visible components". Rename them to "PlayerCat" and "PlayerDog".</p>
+       <img class="enlargeImage" src="../images/woof_purr/addPlayers.gif">
+     </div>
+
+     <div class="tutorialContentPage">
+       <h4>13. Add Player sources</h4>
+       <p>Click PlayerCat and in the Properties panel, click Source and choose "cat.ogg". Next, click on PlayerDog, click Source, and choose "dog.ogg".</p>
+       <img class="enlargeImage" src="../images/woof_purr/playerSources.gif">
+     </div>
+
+    <div class="tutorialContentPage">
+      <h4>14. Add <span class="control">when ButtonCat.Click</span></h4>
+      <p>Now we'll programming vote buttons. Start by clicking Blocks!</p>
+      <img class="enlargeImage" src="../images/woof_purr/clickBlocks.png" alt="some_text">
+      <p>In Blocks, click on ButtonCat and click and drag the <span class="control">when ButtonCat.Click</span> block to Viewer.</p>
+      <img class="enlargeImage" src="../images/woof_purr/buttonClick.gif" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>15. Add <span class="procedures">call PlayerCat.Start</span></h4>
+      <p>Now, click on PlayerCat and click and drag the <span class="procedures">call PlayerCat.Start</span> block to Viewer and connect it to <span class="control">when ButtonCat.Click</span>.</p>
+      <img class="enlargeImage" src="../images/woof_purr/playerStart.gif" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>16. Add <span class="setters">set LabelCatVotes.Text to</span></h4>
+      <p>Click on LabelCatVotes and click and drag the <span class="setters">set LabelCatVotes.Text to</span> block to Viewer and connect it to <span class="control">when ButtonCat.Click</span>.</p>
+      <img class="enlargeImage" src="../images/woof_purr/setLabel.gif" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>17. Add <span class="math">__ + __</span></h4>
+      <p>Click on Math and click and drag the <span class="math">__ + __</span> block to <span class="setters">set LabelCatVotes.Text to</span>.</p>
+      <img class="enlargeImage" src="../images/woof_purr/plus.gif" alt="some_text">
+    </div>
+
+<div class="tutorialContentPage">
+      <h4>18. Add <span class="getters">LabelCatVotes.Text</span></h4>
+      <p>Click on LabelCatVotes and click and drag the <span class="getters">LabelCatVotes.Text</span> block to the first socket of <span class="math">__ + __</span>.</p>
+      <img class="enlargeImage" src="../images/woof_purr/getLabel.gif" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>19. Add <span class="math">0</span></h4>
+      <p>Click on Math and click and drag the <span class="math">0</span> block to the second socket of <span class="math">__ + __</span>. Change the "0" value to a "1".</p>
+      <img class="enlargeImage" src="../images/woof_purr/one.gif" alt="some_text">
+      <p>Now test it out and see if the cat meows and the votes change!</p>
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>20. Repeat for ButtonDog</h4>
+      <p>Add <span class="control">when ButtonCat.Click</span>, connect <span class="procedures">call PlayerCat.Start</span>. Next, add <span class="setters">set LabelCatVotes.Text to</span>, add <span class="math">__ + __</span> to that block and connect <span class="getters">LabelCatVotes.Text</span> to the first socket and <span class="math">0</span> to the second socket (and make sure to change the "0" to a "1".</p>
+      <img class="enlargeImage" src="../images/woof_purr/buttonDog.gif" alt="some_text">
+      <p>Now test it out and see if the cat meows and the votes change!</p>
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>8. Test your App!</h4>
+      <p>When you're done test your app out on your device and collect votes from your friends!</p>
+    </div>
+
+
+    <br/>
+    <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+      <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+    </div>
+  </div>
+
+  <h3>Expand your app</h3>
+  <div>
+    <p>When your app works, try some of these expansions:</p>
+    <ul>
+        <li>What would we have to add so that we can click a button and “reset” the votes back to zero?</li>
+        <li>What are some other ways we could increment CatVote and DogVote?</li>
+        <li>Could we use one player instead of two players to play the sounds? What else in the code would have to change if we used two players?</li>
+        <li>Is there anything to stop someone from voting 20 times?</li>
+        <li>Change the app to be about something else other than voting on cats or dogs. What else could an app like this be used for?</li>
+      </ul>
+  </div>
+
+  <h3>Share the app</h3>
+  <div class="tutorialContainer">
+   <div class="tutorialNavigationHeader"></div>
+   <div class="tutorialContentPage">
+    <p>Click on "My Projects" button on the top menu bar.</p>
+    <img class="enlargeImage" src="https://farm3.staticflickr.com/2166/31967122854_b8916b2698_m.jpg" alt="some_text" style="width:width;height:height;" />
+  </div>
+  <div class="tutorialContentPage">
+    <p>Click on the project you want to share, then click on "Publish to Gallery" button.</p>
+    <img class="enlargeImage" src="https://farm3.staticflickr.com/2851/32769490586_ff773e88d8_m.jpg" alt="some_text" style="width:width;height:height;" />
+  </div>
+  <div class="tutorialContentPage">
+    <p>Fill in all the details and click the "PUBLISH" button.</p>
+    <img class="enlargeImage" src="https://farm3.staticflickr.com/2644/32769535566_29015b5e21_m.jpg" alt="some_text" style="width:width;height:height;" />
+  </div>
+  <div class="tutorialContentPage">
+    <p>Click on "SHARE" button to get the link to the app.</p>
+    <img class="enlargeImage" src="https://farm3.staticflickr.com/2023/32810277025_5c6fd8d26c_m.jpg" alt="some_text" style="width:width;height:height;" />
+  </div>
+  <div class="tutorialContentPage">
+    <p>Copy and paste the link in the space below.</p>
+
+    <div id="shareLinkError" style="display:none">
+      <p style="font-size:12pt;color:red">Your link is not correct. Follow the instructions above to get the correct link.</p>
+    </div>
+
+    <div id="shareLinkContainer">
+      <p><label for="age">Link: </label><input id="appLink" title="Paste the copied link here"></p>
+      <p><label for="age">App Name: </label><input id="appName" title="Type the app name"></p>
+      <p><label for="age">Username: </label><input id="appUsername" title="Type your username"></p>
+      <div class="widget">
+        <button class="shareApp">Share</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="shareCompleted" style="display:none">
+    <p style="font-size:12pt;color:green">Thanks for sharing your project! Check out the shared projects section below.</p>
+  </div>
+
+</div>
+
+<h3>Published apps</h3>
+<div>
+  <div id="container">
+   <div class="projectbox"> 
+    <img class="enlargeImage" src="https://farm3.staticflickr.com/2510/32777057931_d96656a03d_m.jpg" alt="some_text" class="projectimage" />
+    <div class="projecttext"><span> Hello World</span> </div>
+  </div>
+</div>
+</div>
+</div>
+
+<div id="howToAccordion" class="accordion" style="display:none">
+
+
+</div>
+<div id="serverTutorialId" style="display:none;">1</div>
+</body>
+<script src="../scripts/tabHandler.js"></script>
+<script src="../scripts/tutorialPage.js"></script>
+<script src="../scripts/shareAndPublish.js"></script>
+
+</html>
